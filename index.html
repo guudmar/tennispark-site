@@ -1,0 +1,1222 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Тенниспарк Ростов-на-Дону</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Тенниспарк — крупнейший теннисный комплекс Ростова-на-Дону на Левом берегу Дона. Больше 12 кортов с грунтом и хардом, детская школа тенниса с 5 лет, индивидуальные и групповые тренировки, турниры, тренажёрный зал и кафе. Ежедневно 7:00–22:00.">
+<meta name="theme-color" content="#0b2a1c">
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+<link rel="preload" href="assets/fonts/Unbounded-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/GolosText-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+<meta property="og:title" content="Тенниспарк — теннисный клуб в Ростове-на-Дону">
+<meta property="og:description" content="Грунт и хард, детская школа с 5 лет, турниры, зал и кафе с видом на Дон.">
+<meta property="og:image" content="assets/img/club-poster.webp">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SportsActivityLocation","name":"Тенниспарк","alternateName":"Tennispark","telephone":"+7 928 296-07-30","url":"https://tennispark.ru/","address":{"@type":"PostalAddress","streetAddress":"Левобережная ул., 69","addressLocality":"Ростов-на-Дону","addressRegion":"Ростовская обл.","postalCode":"344019","addressCountry":"RU"},"openingHoursSpecification":{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"07:00","closes":"22:00"}}
+</script>
+<style>
+@font-face{font-family:'Unbounded';src:url(assets/fonts/Unbounded-cyrillic.woff2) format('woff2');font-weight:200 900;font-display:swap;unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Unbounded';src:url(assets/fonts/Unbounded-latin.woff2) format('woff2');font-weight:200 900;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Golos Text';src:url(assets/fonts/GolosText-cyrillic.woff2) format('woff2');font-weight:400 900;font-display:swap;unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Golos Text';src:url(assets/fonts/GolosText-latin.woff2) format('woff2');font-weight:400 900;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+
+/* Раскладка: полноширинные полосы — клубный зелёный, войлок мяча, грунт, мел — с контентом в сетке до 1280px */
+:root{
+  color-scheme:light;
+  --night:#0b2a1c;      /* глубокий клубный зелёный, основной тёмный фон */
+  --pine:#123a28;       /* приподнятые тёмные поверхности */
+  --club:#006b2b;       /* зелёный из герба клуба */
+  --clay:#c4572b;       /* грунт корта */
+  --clay-deep:#9b3f1d;
+  --felt:#d6ea3f;       /* войлок мяча */
+  --chalk:#fffbdb;      /* сливочный из герба: текст на тёмном */
+  --paper:#eef0e2;      /* светлые полосы, мел с зеленцой */
+  --ink:#122019;        /* текст на светлом */
+  --muted:#4f5c53;      /* второстепенный текст на светлом */
+  --dim:rgba(255,251,219,.68); /* второстепенный текст на тёмном */
+  --rule-d:rgba(255,251,219,.14);
+  --rule-l:rgba(18,32,25,.14);
+  --display:'Unbounded','Arial Black',system-ui,sans-serif;
+  --text:'Golos Text',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --gut:clamp(20px,4vw,48px);
+  --pl:max(var(--gut),env(safe-area-inset-left,0px));
+  --pr:max(var(--gut),env(safe-area-inset-right,0px));
+  --felt-noise:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 .8 0 0 0 .9 -.35'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  --ease:cubic-bezier(.2,.8,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:84px}
+body{margin:0;background:var(--night);color:var(--chalk);font:400 17px/1.55 var(--text);-webkit-font-smoothing:antialiased;overflow-x:clip}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--night)}
+img,video,svg{display:block;max-width:100%}
+a{color:inherit}
+button,input,select{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--felt);outline-offset:3px;border-radius:6px}
+h1,h2,h3{margin:0;text-wrap:balance}
+p{margin:0}
+ul,ol{margin:0;padding:0;list-style:none}
+.wrap{max-width:1280px;margin-inline:auto;padding-left:var(--pl);padding-right:var(--pr)}
+[hidden]{display:none!important}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+.eyebrow{display:flex;align-items:center;gap:10px;font:600 12.5px/1.2 var(--text);letter-spacing:.16em;text-transform:uppercase}
+.eyebrow::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--felt);box-shadow:inset -2px -1px 0 rgba(0,0,0,.18)}
+h2{font:700 clamp(30px,4.6vw,64px)/1.04 var(--display);letter-spacing:-.025em}
+.sec{padding-block:clamp(84px,11vw,160px)}
+.sec-head{display:grid;gap:20px;margin-bottom:clamp(40px,5vw,72px);max-width:880px}
+.sec-lead{font-size:clamp(17px,1.45vw,20px);line-height:1.55;max-width:62ch;color:var(--dim)}
+.light .sec-lead{color:var(--muted)}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6em;min-height:52px;padding:0 26px;border-radius:999px;font:600 15.5px/1.1 var(--text);text-decoration:none;border:1.5px solid transparent;cursor:pointer;transition:transform .3s var(--ease),background .25s,color .25s,box-shadow .3s,border-color .25s;white-space:nowrap}
+.btn svg{width:18px;height:18px;flex:none}
+.btn-felt{background:var(--felt);color:var(--night)}
+.btn-felt:hover{transform:translateY(-2px);box-shadow:0 14px 30px -12px rgba(214,234,63,.75)}
+.btn-ghost{border-color:rgba(255,251,219,.42);color:var(--chalk);background:rgba(11,42,28,.18);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.btn-ghost:hover{background:var(--chalk);color:var(--night);border-color:var(--chalk)}
+.btn-dark{background:var(--night);color:var(--chalk)}
+.btn-dark:hover{transform:translateY(-2px);box-shadow:0 14px 30px -14px rgba(11,42,28,.8)}
+.btn-line{border-color:var(--rule-l);color:var(--ink)}
+.btn-line:hover{border-color:var(--ink)}
+.btn-sm{min-height:42px;padding:0 18px;font-size:14px}
+
+/* ——— Шапка ——— */
+.hdr{position:fixed;top:env(safe-area-inset-top,0px);left:0;right:0;z-index:50;display:flex;align-items:center;gap:clamp(16px,2.2vw,30px);padding:14px var(--pr) 14px var(--pl);transition:background .4s,box-shadow .4s,transform .45s var(--ease)}
+.hdr.is-solid{background:rgba(11,42,28,.88);backdrop-filter:blur(16px) saturate(1.3);-webkit-backdrop-filter:blur(16px) saturate(1.3);box-shadow:0 1px 0 var(--rule-d)}
+.hdr.is-hidden{transform:translateY(-110%)}
+.felt-on .hdr{background:rgba(11,42,28,.88);backdrop-filter:blur(16px) saturate(1.3);-webkit-backdrop-filter:blur(16px) saturate(1.3)}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;font:700 16px/1 var(--display);letter-spacing:.04em;text-transform:uppercase;flex:none}
+.brand img{width:44px;height:44px;border-radius:50%;box-shadow:0 4px 18px rgba(0,0,0,.25)}
+.nav{display:flex;gap:clamp(16px,1.8vw,28px);margin-left:auto}
+.nav a{font-size:14.5px;font-weight:500;text-decoration:none;position:relative;padding-block:6px;opacity:.88}
+.nav a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;border-radius:2px;background:var(--felt);transform:scaleX(0);transform-origin:left;transition:transform .35s var(--ease)}
+.nav a:hover{opacity:1}
+.nav a:hover::after{transform:scaleX(1)}
+.hdr-phone{font-weight:600;font-size:15px;text-decoration:none;white-space:nowrap;font-variant-numeric:tabular-nums}
+.burger{display:none;margin-left:auto;width:46px;height:46px;border-radius:50%;border:1.5px solid rgba(255,251,219,.35);background:rgba(11,42,28,.35);cursor:pointer;place-items:center}
+.burger span{display:block;width:18px;height:2px;background:var(--chalk);border-radius:2px;box-shadow:0 -6px 0 var(--chalk),0 6px 0 var(--chalk)}
+.mnav{position:fixed;inset:0;z-index:70;background:var(--night);display:flex;flex-direction:column;padding:calc(20px + env(safe-area-inset-top,0px)) var(--pr) calc(28px + env(safe-area-inset-bottom,0px)) var(--pl);transform:translateY(-100%);transition:transform .55s var(--ease);visibility:hidden}
+.mnav.is-open{transform:none;visibility:visible}
+.mnav-top{display:flex;align-items:center;justify-content:space-between}
+.mnav-close{width:46px;height:46px;border-radius:50%;border:1.5px solid rgba(255,251,219,.35);background:none;cursor:pointer;font-size:22px;line-height:1}
+.mnav nav{display:grid;gap:6px;margin-block:auto}
+.mnav nav a{font:700 clamp(28px,8vw,44px)/1.25 var(--display);text-decoration:none;letter-spacing:-.02em}
+.mnav-foot{display:grid;gap:14px}
+.mnav-foot .hdr-phone{font-size:20px}
+@media (max-width:1180px){.nav{display:none}.burger{display:grid}.hdr .hdr-phone{margin-left:auto}.hdr .burger{margin-left:0}}
+@media (max-width:760px){.hdr .hdr-phone,.hdr .btn{display:none}.burger{margin-left:auto!important}.brand span{font-size:14px}}
+
+/* ——— Первый экран ——— */
+.hero{position:relative;height:620vh;background:var(--night)}
+.hero-stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;background:#24452f url(assets/img/clay-courts.webp) center/cover}
+#court3d{position:absolute;inset:0;width:100%;height:100%;opacity:0;transition:opacity 1.4s ease}
+.hero.is-ready #court3d{opacity:1}
+.hero-shade{position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(7,24,15,.6) 0%,rgba(7,24,15,0) 20%,rgba(7,24,15,0) 42%,rgba(7,24,15,.82) 100%)}
+.hero:not(.is-ready) .hero-shade{background:linear-gradient(180deg,rgba(7,24,15,.6),rgba(7,24,15,.55) 40%,rgba(7,24,15,.9))}
+.hero-intro{position:absolute;left:0;right:0;bottom:0;padding:0 var(--pr) calc(clamp(28px,4.5vh,56px) + env(safe-area-inset-bottom,0px)) var(--pl);will-change:transform,opacity}
+.hero-intro .eyebrow{margin-bottom:clamp(14px,2.2vh,26px);color:var(--chalk)}
+.hero-title{font:800 clamp(28px,calc((100vw - 2 * var(--gut)) / 9.35),200px)/.86 var(--display);letter-spacing:-.035em;text-transform:uppercase;white-space:nowrap;margin:0 0 clamp(20px,3.2vh,36px) -.04em;text-shadow:0 10px 50px rgba(0,0,0,.35)}
+.hero-title span{display:inline-block;animation:rise 1.2s var(--ease) both;animation-delay:calc(.35s + var(--i) * 55ms)}
+@keyframes rise{from{transform:translateY(55%);opacity:0}}
+.hero-row{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:24px 40px}
+.hero-lead{max-width:52ch;font-size:clamp(16px,1.35vw,19px);line-height:1.5;color:rgba(255,251,219,.9);animation:fade 1s ease .9s both}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;animation:fade 1s ease 1.05s both}
+@keyframes fade{from{opacity:0;transform:translateY(14px)}}
+.hero-hint{display:flex;align-items:center;gap:10px;margin-top:22px;font-size:13.5px;color:var(--dim);opacity:0}
+.hero-hint i{width:14px;height:14px;border-radius:50%;background:var(--felt);animation:hop 1.1s cubic-bezier(.5,0,.5,1) infinite alternate}
+@keyframes hop{to{transform:translateY(6px)}}
+
+.score{position:absolute;top:calc(env(safe-area-inset-top,0px) + 92px);right:var(--pr);width:min(300px,calc(100vw - 40px));border-radius:16px;overflow:hidden;background:rgba(9,32,21,.86);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid var(--rule-d);opacity:0;visibility:hidden;font-variant-numeric:tabular-nums;box-shadow:0 20px 50px -20px rgba(0,0,0,.6)}
+.score-hd{display:flex;justify-content:space-between;gap:10px;padding:10px 16px;font:600 11px/1 var(--text);letter-spacing:.14em;text-transform:uppercase;background:var(--club);color:var(--chalk)}
+.score-row{display:grid;grid-template-columns:12px 1fr auto;align-items:center;gap:10px;padding:10px 16px;border-top:1px solid var(--rule-d)}
+.score-row:first-of-type{border-top:0}
+.score-row i{width:9px;height:9px;border-radius:50%}
+.score-row .serve{background:var(--felt)}
+.score-row span{font-size:14px;font-weight:500}
+.score-row b{min-width:2.4ch;text-align:right;font:800 24px/1 var(--display);color:var(--felt)}
+.score-row b.flip{animation:flip .5s var(--ease)}
+@keyframes flip{from{transform:rotateX(90deg);opacity:0}}
+.score.is-game .score-row:first-of-type b{font-size:20px;letter-spacing:.02em}
+
+.tags{position:absolute;inset:0;pointer-events:none}
+.tag{position:absolute;left:0;top:0;opacity:0;visibility:hidden;will-change:transform,opacity}
+.tag-dot{position:absolute;left:-7px;top:-7px;width:14px;height:14px;border-radius:50%;background:var(--felt);box-shadow:0 0 0 7px rgba(214,234,63,.25),0 0 24px rgba(214,234,63,.8)}
+.tag-stem{position:absolute;left:-.5px;bottom:0;width:1.5px;height:96px;background:linear-gradient(to top,var(--felt),rgba(214,234,63,.15))}
+.tag-card{position:absolute;left:-14px;bottom:96px;width:max-content;max-width:min(290px,64vw);padding:14px 18px 15px;border-radius:16px;background:rgba(9,32,21,.84);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,251,219,.16);box-shadow:0 18px 40px -18px rgba(0,0,0,.6)}
+.tag.flip-left .tag-card{left:auto;right:-14px}
+.tag-card b{display:block;white-space:nowrap;font:800 clamp(26px,2.6vw,36px)/1 var(--display);letter-spacing:-.02em;color:var(--felt);margin-bottom:6px}
+.tag-card span{display:block;font-size:14.5px;line-height:1.38;color:rgba(255,251,219,.88)}
+.hero-skip{position:absolute;right:var(--pr);bottom:calc(22px + env(safe-area-inset-bottom,0px));font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;color:var(--chalk);opacity:.7;display:flex;align-items:center;gap:8px}
+.hero-skip:hover{opacity:1}
+.hero-felt{position:absolute;inset:0;pointer-events:none;opacity:0;background:var(--felt-noise),var(--felt);background-size:220px 220px,auto}
+.hero.is-felt .hero-skip,.hero.is-felt .tags,.hero.is-felt .score{visibility:hidden}
+.hero.no-webgl{height:100svh}
+.hero.no-webgl .score,.hero.no-webgl .tags,.hero.no-webgl .hero-skip,.hero.no-webgl .hero-hint{display:none}
+@media (max-width:760px){
+  .score{top:calc(env(safe-area-inset-top,0px) + 84px);width:min(250px,calc(100vw - 40px))}
+  .score-hd span:last-child{display:none}
+  .hero-cta{width:100%}
+  .hero-cta .btn{flex:1 1 220px}
+}
+@media (prefers-reduced-motion:reduce){.hero{height:100svh}.hero-skip{display:none}}
+
+/* ——— Войлок: манифест ——— */
+.felt{position:relative;background:var(--felt-noise),var(--felt);background-size:220px 220px,auto;color:var(--night);overflow:hidden}
+.felt-grid{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:clamp(32px,6vw,90px);align-items:center}
+.manifest{font:600 clamp(24px,3.4vw,48px)/1.2 var(--display);letter-spacing:-.025em;max-width:22ch}
+.manifest .w{opacity:.2;transition:opacity .25s linear}
+.manifest .w.on{opacity:1}
+.badge{width:clamp(150px,18vw,250px);height:auto;border-radius:50%;box-shadow:0 30px 60px -30px rgba(11,42,28,.6);will-change:transform}
+.felt-facts{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;padding-top:36px;border-top:1.5px solid rgba(11,42,28,.25)}
+.felt-facts b{display:block;font:700 clamp(18px,1.7vw,24px)/1.2 var(--display);letter-spacing:-.01em}
+.felt-facts span{font-size:15px;color:rgba(11,42,28,.75)}
+@media (max-width:760px){.felt-grid{grid-template-columns:1fr}.badge{order:-1;width:120px}.felt-facts{grid-template-columns:1fr}}
+
+/* ——— Направления ——— */
+.dir-list{border-top:1px solid var(--rule-d)}
+.dir{display:grid;grid-template-columns:minmax(150px,.7fr) minmax(0,1.6fr) minmax(0,1.4fr) 56px;gap:24px;align-items:center;padding:clamp(26px,3vw,40px) 0;border-bottom:1px solid var(--rule-d);text-decoration:none;position:relative}
+.dir-tag{font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--felt)}
+.dir-title{font:700 clamp(22px,2.6vw,38px)/1.1 var(--display);letter-spacing:-.02em;transition:transform .5s var(--ease)}
+.dir-text{color:var(--dim);font-size:16px;line-height:1.5}
+.dir-arrow{width:56px;height:56px;border-radius:50%;border:1.5px solid var(--rule-d);display:grid;place-items:center;transition:background .3s,border-color .3s,transform .5s var(--ease)}
+.dir-arrow svg{width:20px;height:20px}
+.dir:hover .dir-title{transform:translateX(12px)}
+.dir:hover .dir-arrow{background:var(--felt);border-color:var(--felt);color:var(--night);transform:rotate(-45deg)}
+.dir-thumb{display:none}
+.dir-float{position:fixed;left:0;top:0;width:300px;aspect-ratio:4/5;border-radius:18px;overflow:hidden;pointer-events:none;z-index:40;opacity:0;transform:translate3d(-50%,-50%,0) scale(.8);transition:opacity .3s,transform .4s var(--ease);box-shadow:0 30px 60px -20px rgba(0,0,0,.6)}
+.dir-float img{width:100%;height:100%;object-fit:cover}
+.dir-float.on{opacity:1}
+@media (hover:none),(max-width:900px){
+  .dir{grid-template-columns:minmax(0,1fr) 46px;gap:10px 16px}
+  .dir-thumb{display:block;grid-column:1/-1;width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:14px;margin-bottom:8px}
+  .dir-tag{grid-column:1/-1}
+  .dir-text{grid-column:1/-1}
+  .dir-arrow{grid-row:3;grid-column:2;width:46px;height:46px}
+  .dir-title{grid-row:3}
+  .dir-float{display:none}
+}
+
+/* ——— Корты ——— */
+.split{display:flex;gap:10px;padding-inline:max(10px,env(safe-area-inset-left,0px)) max(10px,env(safe-area-inset-right,0px));min-height:min(860px,96vh)}
+.surface{position:relative;flex:1 1 0;min-width:0;border-radius:26px;overflow:hidden;display:flex;align-items:flex-end;transition:flex-grow .8s var(--ease);isolation:isolate}
+.surface>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform 1.2s var(--ease)}
+.surface::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(8,20,14,.08) 0%,rgba(8,20,14,.3) 28%,rgba(8,20,14,.86) 55%,rgba(8,20,14,.95) 100%)}
+.surface-clay::before{background:linear-gradient(180deg,rgba(40,12,2,.05) 0%,rgba(40,12,2,.25) 28%,rgba(48,16,4,.84) 55%,rgba(48,16,4,.94) 100%)}
+.split:hover .surface{flex-grow:.8}
+.split .surface:hover{flex-grow:1.35}
+.surface:hover>img{transform:scale(1.04)}
+.surface-body{padding:clamp(24px,3.4vw,52px);display:grid;gap:16px;max-width:620px}
+.surface-k{font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--felt)}
+.surface h3{font:800 clamp(48px,7vw,112px)/1.04 var(--display);letter-spacing:-.04em;margin-bottom:-.04em}
+.surface p{color:rgba(255,251,219,.86);max-width:52ch}
+.fit-h{font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--chalk)!important;margin-top:4px}
+.fit{display:grid;gap:8px}
+.fit li{display:flex;gap:12px;font-size:15.5px;line-height:1.4;color:rgba(255,251,219,.9)}
+.fit li::before{content:"";flex:none;width:8px;height:8px;margin-top:7px;border-radius:50%;background:var(--felt)}
+.surface .btn{justify-self:start;margin-top:6px}
+.court-spec{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(32px,6vw,90px);align-items:center;margin-top:clamp(56px,7vw,100px)}
+.court-svg{width:100%;height:auto;color:var(--chalk)}
+.court-svg .cl{fill:none;stroke:currentColor;stroke-width:2.2;stroke-dasharray:1200;stroke-dashoffset:1200;transition:stroke-dashoffset 2.2s var(--ease)}
+.court-spec.in .court-svg .cl{stroke-dashoffset:0}
+.court-svg text{font:600 13px var(--text);fill:var(--dim)}
+.court-svg .dim{stroke:var(--felt);stroke-width:1.2;fill:none}
+.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--rule-d);border-radius:20px;overflow:hidden}
+.facts li{background:var(--night);padding:26px 24px}
+.facts b{display:block;font:800 clamp(28px,3vw,42px)/1 var(--display);letter-spacing:-.03em;color:var(--felt);margin-bottom:8px}
+.facts span{font-size:15px;color:var(--dim);line-height:1.4}
+@media (max-width:900px){
+  .split{flex-direction:column;min-height:0}
+  .surface{min-height:620px}
+  .split:hover .surface,.split .surface:hover{flex-grow:1}
+  .court-spec{grid-template-columns:1fr}
+}
+
+/* ——— Фильм ——— */
+.film{height:190vh;position:relative}
+.film-sticky{position:sticky;top:0;height:100vh;height:100svh;display:grid;place-items:center;overflow:hidden}
+.film-frame{position:relative;width:100%;height:100%;clip-path:inset(var(--ci,16%) var(--cx,14%) round var(--cr,28px));will-change:clip-path}
+.film-frame video,.film-frame img{width:100%;height:100%;object-fit:cover}
+.film-cap{position:absolute;left:0;right:0;bottom:0;padding:0 var(--pr) calc(48px + env(safe-area-inset-bottom,0px)) var(--pl);background:linear-gradient(180deg,rgba(0,0,0,0),rgba(6,20,12,.7));padding-top:160px;opacity:var(--co,0)}
+.film-cap h2{max-width:16ch;margin-top:16px}
+@media (prefers-reduced-motion:reduce){.film{height:auto}.film-sticky{position:relative;height:80vh}.film-frame{clip-path:none}.film-cap{opacity:1}}
+
+/* ——— Детская школа ——— */
+.light{background:var(--paper);color:var(--ink)}
+.light .eyebrow::before{background:var(--clay)}
+.school-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px 60px;align-items:end;margin-bottom:clamp(56px,7vw,100px)}
+.school-head h2{font-size:clamp(34px,5.4vw,78px)}
+.school-head .eyebrow{grid-column:1/-1}
+.stages{position:relative;display:grid;gap:clamp(18px,2.4vw,28px);--prog:0}
+.stages::before,.stages::after{content:"";position:absolute;left:calc(clamp(110px,15vw,200px) - 1px);top:12px;bottom:12px;width:2px;background:var(--rule-l);border-radius:2px}
+.stages::after{background:var(--clay);transform-origin:top;transform:scaleY(var(--prog))}
+.stage-ball{position:absolute;left:calc(clamp(110px,15vw,200px) - 11px);top:calc(12px + (100% - 24px) * var(--prog));width:22px;height:22px;margin-top:-11px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#f4ff9a,var(--felt) 45%,#a8bd1c);box-shadow:0 6px 14px rgba(0,0,0,.25);z-index:2;transform:rotate(calc(var(--prog) * 1080deg))}
+.stage-ball::after{content:"";position:absolute;inset:3px;border-radius:50%;border:2px solid transparent;border-left-color:#fff;border-right-color:#fff}
+.stage{display:grid;grid-template-columns:clamp(110px,15vw,200px) minmax(0,1fr);gap:0 clamp(28px,4vw,56px)}
+.stage-age{font:800 clamp(30px,3.8vw,56px)/1 var(--display);letter-spacing:-.04em;color:var(--clay);padding-right:24px;text-align:right}
+.stage-age small{display:block;font:600 13px/1.2 var(--text);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:8px}
+.stage-body{background:#fff;border-radius:22px;padding:clamp(22px,2.6vw,34px);display:grid;gap:14px;box-shadow:0 1px 0 var(--rule-l)}
+.stage-body h3{font:700 clamp(19px,1.8vw,25px)/1.2 var(--display);letter-spacing:-.015em}
+.stage-body>p{color:var(--muted)}
+.stage-body ul{display:grid;gap:8px}
+.stage-body li{display:flex;gap:12px;line-height:1.45}
+.stage-body li::before{content:"";flex:none;width:7px;height:7px;margin-top:9px;border-radius:50%;background:var(--clay)}
+.goal{display:flex;gap:12px;align-items:baseline;padding-top:14px;border-top:1px dashed var(--rule-l);color:var(--ink)!important;font-weight:500}
+.goal b{flex:none;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--clay)}
+.school-more{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px;margin-top:clamp(56px,7vw,100px)}
+.card-l{border-radius:24px;padding:clamp(26px,3.2vw,44px);display:grid;gap:16px;align-content:start}
+.card-l h3{font:700 clamp(22px,2.2vw,30px)/1.15 var(--display);letter-spacing:-.02em}
+.card-l p{color:var(--muted)}
+.card-groups{background:#fff}
+.card-team{background:var(--night);color:var(--chalk)}
+.card-team p{color:var(--dim)}
+.equation{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;font:800 clamp(20px,2.3vw,32px)/1.1 var(--display);letter-spacing:-.02em}
+.equation i{font-style:normal;color:var(--felt)}
+.equation em{font-style:normal;padding:6px 14px;border-radius:999px;background:var(--felt);color:var(--night)}
+.school-cta{display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin-top:40px}
+.school-cta p{color:var(--muted);max-width:56ch}
+@media (max-width:900px){
+  .school-head,.school-more{grid-template-columns:1fr}
+  .stages::before,.stages::after{left:11px}
+  .stage-ball{left:0}
+  .stage{grid-template-columns:1fr;padding-left:40px;gap:10px}
+  .stage-age{text-align:left;padding:0;display:flex;align-items:baseline;gap:10px}
+  .stage-age small{margin:0}
+}
+
+/* ——— Тренеры ——— */
+.head-row{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:clamp(36px,4vw,56px)}
+.head-row .sec-head{margin:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{min-height:42px;padding:0 18px;border-radius:999px;border:1.5px solid var(--rule-d);background:none;cursor:pointer;font-size:14.5px;font-weight:500;transition:background .25s,color .25s,border-color .25s}
+.chip:hover{border-color:var(--chalk)}
+.chip[aria-pressed="true"]{background:var(--felt);color:var(--night);border-color:var(--felt)}
+.coach-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,260px),1fr));gap:clamp(14px,1.6vw,22px)}
+.coach{display:flex;flex-direction:column;gap:14px;transition:opacity .4s,transform .5s var(--ease)}
+.coach[hidden]{display:none!important}
+.coach figure{position:relative;margin:0;border-radius:20px;overflow:hidden;aspect-ratio:4/5;background:var(--pine)}
+.coach figure img{width:100%;height:100%;object-fit:cover;object-position:50% 20%;transition:transform 1s var(--ease),filter .6s}
+.coach:hover figure img{transform:scale(1.05)}
+.coach-exp{position:absolute;left:12px;top:12px;padding:8px 12px;border-radius:12px;background:rgba(11,42,28,.82);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);font:800 18px/1 var(--display);color:var(--felt);letter-spacing:-.02em}
+.coach-exp small{display:block;font:500 11px/1.2 var(--text);letter-spacing:.08em;text-transform:uppercase;color:var(--dim);margin-top:4px}
+.coach h3{font:700 19px/1.2 var(--display);letter-spacing:-.015em}
+.coach h3 span{display:block;font:500 15px/1.3 var(--text);letter-spacing:0;color:var(--dim);margin-top:4px}
+.coach-do{display:grid;gap:5px;font-size:14.5px;line-height:1.4;color:rgba(255,251,219,.82)}
+.coach-do li{display:flex;gap:10px}
+.coach-do li::before{content:"";flex:none;width:6px;height:6px;margin-top:8px;border-radius:50%;background:var(--felt)}
+.coach-btn{margin-top:auto;align-self:flex-start;display:inline-flex;align-items:center;gap:8px;font-size:14.5px;font-weight:600;text-decoration:none;padding:10px 0;border-bottom:1.5px solid var(--felt)}
+.coach-btn svg{width:16px;height:16px;transition:transform .3s var(--ease)}
+.coach-btn:hover svg{transform:translateX(4px)}
+
+/* ——— Клуб ——— */
+.club-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(32px,5vw,80px);align-items:start}
+.club-view{position:sticky;top:110px;border-radius:26px;overflow:hidden;aspect-ratio:4/4.4;background:#d9dccb}
+.club-view img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.06);transition:opacity .7s ease,transform 1.4s var(--ease)}
+.club-view img.on{opacity:1;transform:none}
+.club-view figcaption{position:absolute;left:16px;bottom:16px;padding:9px 14px;border-radius:12px;background:rgba(255,255,255,.88);font-size:13.5px;font-weight:600;color:var(--ink)}
+.club-list{display:grid}
+.club-item{padding:26px 0;border-top:1px solid var(--rule-l);display:grid;gap:10px;cursor:default;transition:opacity .4s}
+.club-item:last-child{border-bottom:1px solid var(--rule-l)}
+.club-item h3{display:flex;align-items:center;gap:14px;font:700 clamp(20px,2vw,28px)/1.15 var(--display);letter-spacing:-.02em}
+.club-item h3 i{flex:none;width:12px;height:12px;border-radius:50%;border:2px solid var(--clay);transition:background .3s,transform .3s}
+.club-item p{color:var(--muted);max-width:56ch}
+.club-item img{display:none}
+.club-list.has-active .club-item{opacity:.45}
+.club-list.has-active .club-item.on{opacity:1}
+.club-item.on h3 i{background:var(--clay);transform:scale(1.2)}
+@media (max-width:900px){
+  .club-grid{grid-template-columns:1fr}
+  .club-view{display:none}
+  .club-item img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:16px;margin-top:6px}
+  .club-list.has-active .club-item{opacity:1}
+}
+
+/* ——— Зал ——— */
+.gym{background:#0d1310;color:var(--chalk)}
+.gym-top{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:clamp(32px,5vw,80px);align-items:center}
+.gym-top .sec-head{margin:0}
+.gym-photo{border-radius:26px;overflow:hidden;aspect-ratio:16/11}
+.gym-photo img{width:100%;height:100%;object-fit:cover}
+.gym-cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:clamp(48px,6vw,84px)}
+.gym-card{border:1px solid var(--rule-d);border-radius:22px;padding:clamp(22px,2.4vw,32px);display:grid;gap:16px;align-content:start}
+.gym-card h3{font:700 19px/1.25 var(--display);letter-spacing:-.01em}
+.gym-card ul{display:grid;gap:10px}
+.gym-card li{display:flex;gap:12px;color:rgba(255,251,219,.82);line-height:1.45}
+.gym-card li::before{content:"";flex:none;width:7px;height:7px;margin-top:9px;border-radius:2px;background:var(--felt);transform:rotate(45deg)}
+.formats{display:grid;gap:14px}
+.formats div{display:grid;gap:4px;padding-bottom:14px;border-bottom:1px solid var(--rule-d)}
+.formats div:last-child{border:0;padding:0}
+.formats b{font-weight:600}
+.formats span{color:var(--dim);font-size:15px}
+.gym-strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:20px}
+.gym-strip img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:18px}
+.gym-coaches{display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px;margin-top:28px;color:var(--dim)}
+.gym-coaches a{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--chalk);font-weight:600}
+.gym-coaches img{width:40px;height:40px;border-radius:50%;object-fit:cover;object-position:50% 20%}
+@media (max-width:900px){.gym-top,.gym-cols{grid-template-columns:1fr}.gym-strip{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* ——— Турниры ——— */
+.tour{background:var(--clay);color:var(--chalk);position:relative;overflow:hidden}
+.tour::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(0,0,0,.035) 0 2px,transparent 2px 7px);pointer-events:none}
+.tour .wrap{position:relative}
+.tour .eyebrow::before{background:var(--chalk)}
+.tour .sec-lead{color:rgba(255,251,219,.86)}
+.reasons{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:rgba(255,251,219,.22);border-radius:22px;overflow:hidden;margin-bottom:clamp(40px,5vw,64px)}
+.reasons li{background:var(--clay);padding:clamp(20px,2.2vw,30px);display:grid;gap:8px;align-content:start}
+.reasons b{font:700 18px/1.25 var(--display);letter-spacing:-.01em}
+.reasons span{color:rgba(255,251,219,.86);font-size:15px;line-height:1.45}
+.board-wrap{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:20px;align-items:stretch}
+.board{background:var(--night);border-radius:24px;overflow:hidden;box-shadow:0 30px 70px -30px rgba(40,10,0,.6)}
+.board-hd{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:18px 24px;background:var(--club);font:600 12px/1 var(--text);letter-spacing:.14em;text-transform:uppercase}
+.board-hd b{font:800 15px/1 var(--display);letter-spacing:.02em}
+.board-scroll{overflow-x:auto}
+.board table{width:100%;min-width:560px;border-collapse:collapse;font-variant-numeric:tabular-nums}
+.board td{padding:15px 24px;border-top:1px solid var(--rule-d);vertical-align:top}
+.board tr:first-child td{border-top:0}
+.board .d{font:700 15px/1.3 var(--display);color:var(--felt);white-space:nowrap;width:1%}
+.board .n{font-weight:600}
+.board .n small{display:block;font-weight:400;font-size:14px;color:var(--dim);margin-top:2px}
+.board .s{text-align:right;white-space:nowrap}
+.board .s span{display:inline-block;padding:5px 10px;border-radius:999px;border:1px solid var(--rule-d);font-size:12px;color:var(--dim)}
+.board-foot{padding:18px 24px;border-top:1px solid var(--rule-d);display:flex;flex-wrap:wrap;gap:14px 20px;align-items:center;justify-content:space-between;color:var(--dim);font-size:15px}
+.tour-photos{display:grid;grid-template-rows:1fr 1fr;gap:20px}
+.tour-photos img{width:100%;height:100%;min-height:200px;object-fit:cover;border-radius:24px}
+@media (max-width:1000px){.reasons{grid-template-columns:repeat(2,minmax(0,1fr))}.board-wrap{grid-template-columns:1fr}.tour-photos{grid-template-rows:none;grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.reasons{grid-template-columns:1fr}.tour-photos{grid-template-columns:1fr}.board table{min-width:0}.board .s{display:none}.board td{padding:14px 18px}.board .d{font-size:13px}.board-hd,.board-foot{padding-inline:18px}}
+
+/* ——— Запись ——— */
+.book{background:var(--night);position:relative;overflow:hidden}
+.book-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.9fr);gap:clamp(32px,5vw,72px);align-items:start}
+.form{display:grid;gap:26px}
+.field{display:grid;gap:10px;border:0;margin:0;padding:0;min-width:0}
+.field>legend,.field>label,.lbl{font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);padding:0;margin-bottom:10px}
+.seg{display:flex;flex-wrap:wrap;gap:8px}
+.seg input{position:absolute;opacity:0;pointer-events:none}
+.seg label{min-height:46px;display:inline-flex;align-items:center;padding:0 18px;border-radius:999px;border:1.5px solid var(--rule-d);cursor:pointer;font-size:15px;font-weight:500;transition:background .25s,color .25s,border-color .25s}
+.seg label:hover{border-color:rgba(255,251,219,.5)}
+.seg input:checked+label{background:var(--felt);color:var(--night);border-color:var(--felt)}
+.seg input:focus-visible+label{outline:2px solid var(--felt);outline-offset:3px}
+.row2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px}
+.inp{width:100%;min-height:54px;padding:0 18px;border-radius:14px;border:1.5px solid var(--rule-d);background:rgba(255,251,219,.04);color:var(--chalk);font-size:16px;color-scheme:dark;transition:border-color .25s,background .25s}
+.inp:focus{outline:none;border-color:var(--felt);background:rgba(255,251,219,.07)}
+.inp::placeholder{color:rgba(255,251,219,.4)}
+select.inp{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23fffbdb' stroke-width='1.8' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 18px center;padding-right:44px}
+select.inp option{background:var(--night);color:var(--chalk)}
+.form-err{color:#ffb38f;font-size:15px;min-height:1.4em}
+.ticket{position:sticky;top:110px;border-radius:26px;background:var(--chalk);color:var(--ink);overflow:hidden;box-shadow:0 40px 80px -40px rgba(0,0,0,.7)}
+.ticket-top{padding:22px 26px;background:var(--club);color:var(--chalk);display:flex;justify-content:space-between;align-items:center;gap:14px}
+.ticket-top img{width:48px;height:48px;border-radius:50%}
+.ticket-top b{font:800 15px/1.2 var(--display);letter-spacing:.04em;text-transform:uppercase}
+.ticket-top small{display:block;font:500 12px/1.3 var(--text);letter-spacing:.1em;text-transform:uppercase;opacity:.75;margin-top:2px}
+.ticket-body{padding:26px;display:grid;gap:18px;position:relative}
+.ticket-body::before{content:"";position:absolute;left:0;right:0;top:0;border-top:2px dashed rgba(18,32,25,.2)}
+.ticket-kind{font:800 clamp(24px,2.4vw,32px)/1.1 var(--display);letter-spacing:-.02em}
+.ticket-sub{color:var(--clay-deep);font-weight:600;margin-top:4px}
+.ticket dl{display:grid;grid-template-columns:auto 1fr;gap:10px 18px;margin:0;font-size:15px}
+.ticket dt{color:var(--muted)}
+.ticket dd{margin:0;font-weight:600;text-align:right;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.ticket-actions{padding:0 26px 26px;display:grid;gap:12px}
+.ticket-actions .btn{width:100%}
+.ticket-note{font-size:14px;color:var(--muted);text-align:center}
+.ticket-note b{color:var(--ink);font-variant-numeric:tabular-nums;user-select:all}
+@media (max-width:1000px){.book-grid{grid-template-columns:1fr}.ticket{position:relative;top:0}}
+@media (max-width:560px){.row2{grid-template-columns:1fr}}
+
+/* ——— Контакты и подвал ——— */
+.contacts{background:var(--pine)}
+.contact-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.2fr);gap:clamp(28px,4vw,60px);align-items:stretch}
+.c-list{display:grid;gap:0;align-content:start}
+.c-item{display:grid;grid-template-columns:44px minmax(0,1fr);gap:16px;padding:22px 0;border-bottom:1px solid var(--rule-d)}
+.c-item:first-child{padding-top:0}
+.c-ic{width:44px;height:44px;border-radius:50%;background:rgba(214,234,63,.12);color:var(--felt);display:grid;place-items:center}
+.c-ic svg{width:20px;height:20px}
+.c-item small{display:block;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin-bottom:4px}
+.c-item b{font:700 clamp(18px,1.7vw,22px)/1.3 var(--display);letter-spacing:-.01em;font-variant-numeric:tabular-nums}
+.c-item p{color:var(--dim);font-size:15px;margin-top:4px}
+.c-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.map{position:relative;border-radius:26px;overflow:hidden;min-height:440px;background:#183f2c}
+.map svg{position:absolute;inset:0;width:100%;height:100%}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:saturate(.9)}
+.foot{background:var(--night);padding-block:clamp(56px,7vw,90px) calc(36px + env(safe-area-inset-bottom,0px));overflow:hidden}
+.foot-word{font:800 clamp(28px,calc((min(100vw,1280px) - 2 * var(--gut)) / 9.6),200px)/.8 var(--display);letter-spacing:-.05em;text-transform:uppercase;color:transparent;-webkit-text-stroke:1.5px rgba(255,251,219,.22);white-space:nowrap;margin-bottom:clamp(36px,5vw,64px)}
+.foot-grid{display:flex;flex-wrap:wrap;justify-content:space-between;gap:28px 48px;align-items:flex-start}
+.foot-nav{display:grid;grid-template-columns:repeat(3,auto);gap:10px 40px}
+.foot-nav a{text-decoration:none;color:var(--dim)}
+.foot-nav a:hover{color:var(--chalk)}
+.foot small{color:rgba(255,251,219,.45);font-size:13.5px}
+@media (max-width:900px){.contact-grid{grid-template-columns:1fr}.map{min-height:340px}.foot-nav{grid-template-columns:repeat(2,auto)}}
+
+/* ——— Мобильная панель ——— */
+.mbar{position:fixed;left:0;right:0;bottom:0;z-index:45;display:none;gap:10px;padding:10px var(--pr) calc(10px + env(safe-area-inset-bottom,0px)) var(--pl);background:rgba(11,42,28,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 -1px 0 var(--rule-d);transform:translateY(110%);transition:transform .45s var(--ease)}
+.mbar .btn{flex:1}
+.mbar .btn-ghost{flex:0 0 52px;padding:0}
+.mbar.on{transform:none}
+@media (max-width:760px){.mbar{display:flex}.foot{padding-bottom:calc(100px + env(safe-area-inset-bottom,0px))}}
+
+/* ——— Появление при скролле ——— */
+.js .rv{opacity:0;transform:translateY(28px);transition:opacity .9s ease,transform 1s var(--ease)}
+.js .rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .js .rv{opacity:1;transform:none;transition:none}
+  .hero-title span,.hero-lead,.hero-cta{animation:none}
+  *{scroll-behavior:auto!important}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.6 3.5l2.6.4 1.4 4-1.9 1.6a12 12 0 0 0 5.8 5.8l1.6-1.9 4 1.4.4 2.6c.1.9-.6 1.8-1.5 1.8A16.8 16.8 0 0 1 4.8 5c0-.9.9-1.6 1.8-1.5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M12 3.5a8.5 8.5 0 0 0-7.4 12.7L3.5 20.5l4.4-1.1A8.5 8.5 0 1 0 12 3.5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 10.5h6M9 13.5h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="9.5" r="2.6" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 7.5V12l3 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-car" viewBox="0 0 24 24"><path d="M4 16v-4l2-5h12l2 5v4M4 16h16M4 16v2.5M20 16v2.5M7.5 13h.01M16.5 13h.01" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</svg>
+
+<header class="hdr" id="hdr">
+  <a class="brand" href="#top" aria-label="Тенниспарк — в начало"><img src="assets/logo.svg" alt="" width="44" height="44"><span>Тенниспарк</span></a>
+  <nav class="nav" aria-label="Разделы сайта">
+    <a href="#courts">Корты</a>
+    <a href="#school">Детская школа</a>
+    <a href="#coaches">Тренеры</a>
+    <a href="#club">Клуб</a>
+    <a href="#gym">Зал</a>
+    <a href="#tournaments">Турниры</a>
+    <a href="#contacts">Контакты</a>
+  </nav>
+  <a class="hdr-phone" href="tel:+79282960730">+7 928 296-07-30</a>
+  <a class="btn btn-felt btn-sm" href="#booking" data-kind="court">Забронировать корт</a>
+  <button class="burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="mnav"><span></span></button>
+</header>
+
+<div class="mnav" id="mnav" role="dialog" aria-modal="true" aria-label="Меню">
+  <div class="mnav-top">
+    <a class="brand" href="#top"><img src="assets/logo.svg" alt="" width="44" height="44"><span>Тенниспарк</span></a>
+    <button class="mnav-close" type="button" aria-label="Закрыть меню">×</button>
+  </div>
+  <nav aria-label="Разделы сайта">
+    <a href="#courts">Корты</a>
+    <a href="#school">Детская школа</a>
+    <a href="#coaches">Тренеры</a>
+    <a href="#club">Клуб</a>
+    <a href="#gym">Тренажёрный зал</a>
+    <a href="#tournaments">Турниры</a>
+    <a href="#contacts">Контакты</a>
+  </nav>
+  <div class="mnav-foot">
+    <a class="hdr-phone" href="tel:+79282960730">+7 928 296-07-30</a>
+    <a class="btn btn-felt" href="#booking" data-kind="court">Забронировать корт</a>
+  </div>
+</div>
+
+<main>
+<section class="hero" id="top" aria-label="Тенниспарк">
+  <div class="hero-stage">
+    <canvas id="court3d" aria-hidden="true"></canvas>
+    <div class="hero-shade" aria-hidden="true"></div>
+    <div class="hero-intro">
+      <p class="eyebrow">Теннисный клуб · Ростов-на-Дону · Левый берег Дона</p>
+      <h1 class="hero-title" aria-label="Тенниспарк"><span style="--i:0" aria-hidden="true">Т</span><span style="--i:1" aria-hidden="true">е</span><span style="--i:2" aria-hidden="true">н</span><span style="--i:3" aria-hidden="true">н</span><span style="--i:4" aria-hidden="true">и</span><span style="--i:5" aria-hidden="true">с</span><span style="--i:6" aria-hidden="true">п</span><span style="--i:7" aria-hidden="true">а</span><span style="--i:8" aria-hidden="true">р</span><span style="--i:9" aria-hidden="true">к</span></h1>
+      <div class="hero-row">
+        <p class="hero-lead">Крупнейший теннисный комплекс Ростова: больше 12 кортов с грунтом и хардом, детская школа с 5 лет, турниры, тренажёрный зал и кафе с видом на Дон.</p>
+        <div class="hero-cta">
+          <a class="btn btn-felt" href="#booking" data-kind="court">Забронировать корт</a>
+          <a class="btn btn-ghost" href="#booking" data-kind="lesson">Записаться на занятие</a>
+        </div>
+      </div>
+      <p class="hero-hint"><i></i>Листайте вниз — сейчас будет подача</p>
+    </div>
+
+    <div class="score" aria-hidden="true">
+      <div class="score-hd"><span>Tennispark</span><span>Корт 1 · Сет 1</span></div>
+      <div class="score-row"><i class="serve"></i><span>Вы</span><b data-score="you">0</b></div>
+      <div class="score-row"><i></i><span>Соперник</span><b data-score="opp">0</b></div>
+    </div>
+
+    <div class="tags" aria-hidden="true">
+      <div class="tag"><i class="tag-stem"></i><i class="tag-dot"></i><div class="tag-card"><b>12+ кортов</b><span>Грунт и хард, открытые и крытые</span></div></div>
+      <div class="tag"><i class="tag-stem"></i><i class="tag-dot"></i><div class="tag-card"><b>с 5 лет</b><span>Детская школа: от первых ударов до турниров ITF</span></div></div>
+      <div class="tag"><i class="tag-stem"></i><i class="tag-dot"></i><div class="tag-card"><b>14 тренеров</b><span>Теннис и фитнес, стаж до 30+ лет</span></div></div>
+      <div class="tag"><i class="tag-stem"></i><i class="tag-dot"></i><div class="tag-card"><b>7:00–22:00</b><span>Каждый день, без выходных и перерывов</span></div></div>
+    </div>
+
+    <a class="hero-skip" href="#about">Пропустить <svg width="14" height="14" style="transform:rotate(90deg)"><use href="#i-arrow"/></svg></a>
+    <div class="hero-felt" aria-hidden="true"></div>
+  </div>
+</section>
+
+<section class="felt sec" id="about">
+  <div class="wrap felt-grid">
+    <p class="manifest" data-words>Тенниспарк — пространство для тех, кто хочет прикоснуться к культуре и духу великого спорта, укрепить характер и пройти путь от первых шагов на корте до профессионального уровня.</p>
+    <img class="badge" src="assets/logo.svg" alt="Герб клуба: Tennispark, Rostov-on-Don" width="250" height="250">
+    <ul class="felt-facts">
+      <li><b>Левобережная, 69</b><span>Ростов-на-Дону, Левый берег</span></li>
+      <li><b>7:00–22:00</b><span>каждый день, без выходных и перерывов</span></li>
+      <li><b>Своя парковка</b><span>бесплатная, прямо у входа в клуб</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec" id="play">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <p class="eyebrow">Чем заняться в клубе</p>
+      <h2>Четыре способа выйти на корт</h2>
+    </div>
+    <ul class="dir-list">
+      <li class="rv"><a class="dir" href="#school"><img class="dir-thumb" src="assets/img/ball-hand.webp" alt="" loading="lazy"><span class="dir-tag">Дети от 5 лет</span><span class="dir-title">Детская школа тенниса</span><span class="dir-text">Системная подготовка: техника, выносливость, тактическое мышление. Группы по возрасту и уровню игры.</span><span class="dir-arrow"><svg><use href="#i-arrow"/></svg></span></a></li>
+      <li class="rv"><a class="dir" href="#courts"><img class="dir-thumb" src="assets/img/clay-courts.webp" alt="" loading="lazy"><span class="dir-tag">Грунт и хард</span><span class="dir-title">Аренда кортов</span><span class="dir-text">Больше 12 кортов круглый год: для своих тренировок, спаррингов и подготовки к соревнованиям.</span><span class="dir-arrow"><svg><use href="#i-arrow"/></svg></span></a></li>
+      <li class="rv"><a class="dir" href="#coaches"><img class="dir-thumb" src="assets/img/coach-tsibizova.webp" alt="" loading="lazy"><span class="dir-tag">Один на один</span><span class="dir-title">Индивидуальные тренировки</span><span class="dir-text">Тренер разбирает движения, исправляет ошибки и выстраивает тактику под ваш уровень.</span><span class="dir-arrow"><svg><use href="#i-arrow"/></svg></span></a></li>
+      <li class="rv"><a class="dir" href="#booking" data-kind="lesson" data-format="В группе"><img class="dir-thumb" src="assets/img/tour-players.webp" alt="" loading="lazy"><span class="dir-tag">В компании</span><span class="dir-title">Групповые занятия</span><span class="dir-text">Баланс личного прогресса и игровой практики с соперниками вашего уровня.</span><span class="dir-arrow"><svg><use href="#i-arrow"/></svg></span></a></li>
+    </ul>
+  </div>
+  <div class="dir-float" aria-hidden="true"><img alt=""></div>
+</section>
+
+<section class="sec" id="courts" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <p class="eyebrow">Аренда кортов</p>
+      <h2>Хард или грунт?</h2>
+      <p class="sec-lead">Больше 12 кортов: открытые и крытые, с хардом и грунтом. Крытые корты работают круглый год, в любую погоду. Выберите покрытие под свой стиль игры.</p>
+    </div>
+  </div>
+  <div class="split rv">
+    <article class="surface surface-hard">
+      <img src="assets/img/hard-indoor.webp" alt="Крытый зал с хардовыми кортами" loading="lazy">
+      <div class="surface-body">
+        <p class="surface-k">Быстрая игра</p>
+        <h3>Хард</h3>
+        <p>Профессиональное семислойное американское покрытие: стабильный отскок, равномерное сцепление, удобное передвижение. Эластичное основание снижает ударную нагрузку.</p>
+        <p class="fit-h">Подойдёт, если вы</p>
+        <ul class="fit">
+          <li>играете в атакующем стиле и высоком темпе</li>
+          <li>любите мощные плоские удары и агрессивную подачу</li>
+          <li>предпочитаете короткие розыгрыши и игру первым номером</li>
+        </ul>
+        <a class="btn btn-felt" href="#booking" data-kind="court" data-surface="Хард">Забронировать хард</a>
+      </div>
+    </article>
+    <article class="surface surface-clay">
+      <img src="assets/img/clay-courts.webp" alt="Открытые грунтовые корты клуба" loading="lazy">
+      <div class="surface-body">
+        <p class="surface-k">Длинные розыгрыши</p>
+        <h3>Грунт</h3>
+        <p>Премиальный грунт мелкой фракции и идеально ровная поверхность. Регулярный уход держит отскок стабильным, скольжение плавным, а нагрузку на суставы низкой.</p>
+        <p class="fit-h">Подойдёт, если вы</p>
+        <ul class="fit">
+          <li>строите розыгрыш комбинациями</li>
+          <li>делаете ставку на стабильность и контроль мяча</li>
+          <li>работаете над перемещением и выносливостью</li>
+        </ul>
+        <a class="btn btn-felt" href="#booking" data-kind="court" data-surface="Грунт">Забронировать грунт</a>
+      </div>
+    </article>
+  </div>
+  <div class="wrap court-spec rv">
+    <svg class="court-svg" viewBox="0 0 620 330" role="img" aria-label="Схема теннисного корта: 23,77 на 10,97 метра">
+      <rect class="cl" x="40" y="40" width="520" height="240"/>
+      <path class="cl" d="M40 70H560M40 250H560M180 70V250M420 70V250M180 160H420M300 30V290"/>
+      <path class="dim" d="M40 310H560M40 304v12M560 304v12M590 40V280M584 40h12M584 280h12"/>
+      <text x="300" y="326" text-anchor="middle">23,77 м</text>
+      <text x="606" y="164" text-anchor="middle" transform="rotate(90 606 164)">10,97 м</text>
+      <text x="300" y="22" text-anchor="middle">сетка 0,914 м в центре</text>
+      <text x="110" y="166" text-anchor="middle">задняя зона</text>
+      <text x="240" y="122" text-anchor="middle">квадрат подачи</text>
+    </svg>
+    <ul class="facts">
+      <li><b>12+</b><span>кортов на территории клуба</span></li>
+      <li><b>2</b><span>покрытия: хард и грунт</span></li>
+      <li><b>365</b><span>дней в году на крытых кортах</span></li>
+      <li><b>Дон</b><span>с части грунтовых кортов видно реку</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="film" id="film" aria-label="Видео о клубе">
+  <div class="film-sticky">
+    <div class="film-frame">
+      <video muted loop playsinline autoplay preload="metadata" poster="assets/img/club-poster.webp" aria-label="Клуб с высоты: корты у Дона, мяч на грунте, игра">
+        <source src="assets/video/club.mp4" type="video/mp4">
+      </video>
+      <div class="film-cap">
+        <p class="eyebrow">Левый берег Дона</p>
+        <h2>Корты с видом на реку и город</h2>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="light sec" id="school">
+  <div class="wrap">
+    <div class="school-head rv">
+      <p class="eyebrow">Детская школа тенниса</p>
+      <h2>Растим чемпионов с 5 лет</h2>
+      <p class="sec-lead">Каждый ребёнок уникален. Мы ведём детей от первых ударов ракеткой до региональных и международных турниров, а теннис становится для них источником уверенности, дисциплины и стремления к победе.</p>
+    </div>
+
+    <ol class="stages" id="stages">
+      <li class="stage-ball" aria-hidden="true"></li>
+      <li class="stage rv">
+        <div class="stage-age">5–6<small>лет</small></div>
+        <div class="stage-body">
+          <h3>Первое знакомство с теннисом</h3>
+          <p>Важнее всего не техника, а общая физическая подготовка, координация и любовь к спорту.</p>
+          <ul><li>игровая форма тренировок с элементами тенниса</li><li>моторика, чувство мяча, работа ног</li><li>первые шаги в работе с ракеткой</li></ul>
+          <p class="goal"><b>Цель</b>Интерес к игре и базовые физические навыки</p>
+        </div>
+      </li>
+      <li class="stage rv">
+        <div class="stage-age">6–8<small>лет</small></div>
+        <div class="stage-body">
+          <h3>Техника и игровые навыки</h3>
+          <p>Полноценное освоение базовой техники и развитие игровых элементов.</p>
+          <ul><li>постановка ударов, контроль мяча, баланс</li><li>первые тактические решения: позиция на корте, реакция</li><li>ведение розыгрышей и подготовка к первым соревнованиям</li></ul>
+          <p class="goal"><b>Цель</b>Стабильная техническая база и знакомство с соревнованиями</p>
+        </div>
+      </li>
+      <li class="stage rv">
+        <div class="stage-age">9–10<small>лет</small></div>
+        <div class="stage-body">
+          <h3>Первые официальные турниры</h3>
+          <p>Игроки выходят на официальные соревнования и тренируются больше.</p>
+          <ul><li>опыт официальных матчей и психологическая устойчивость</li><li>выносливость, скорость, сила удара</li><li>больше объёма и интенсивности тренировок</li></ul>
+          <p class="goal"><b>Цель</b>Освоиться в соревнованиях и укрепить физическую базу</p>
+        </div>
+      </li>
+      <li class="stage rv">
+        <div class="stage-age">11+<small>лет</small></div>
+        <div class="stage-body">
+          <h3>Юниорский теннис</h3>
+          <p>Растёт интенсивность и число тренировок, добавляется специальная физическая подготовка.</p>
+          <ul><li>индивидуальная работа над деталями техники и тактикой</li><li>турниры Tennis Europe и ITF Junior</li><li>игровая стратегия, вариативность ударов, ментальная подготовка</li></ul>
+          <p class="goal"><b>Цель</b>Переход в юниорский теннис и подготовка к профессиональным турнирам</p>
+        </div>
+      </li>
+      <li class="stage rv">
+        <div class="stage-age">до 18<small>лет</small></div>
+        <div class="stage-body">
+          <h3>Международный уровень</h3>
+          <p>Путь от европейских юниорских стартов к профессиональному туру.</p>
+          <ul><li>Tennis Europe — юниоры до 16 лет</li><li>ITF Junior — мировые турниры до 18 лет и юниорский рейтинг</li><li>ITF Pro Circuit — профессиональные турниры, ведущие в ATP и WTA</li></ul>
+          <p class="goal"><b>Цель</b>Подготовка к профессиональному теннису</p>
+        </div>
+      </li>
+    </ol>
+
+    <div class="school-more">
+      <div class="card-l card-groups rv">
+        <p class="eyebrow">Состав групп</p>
+        <h3>Группы пересобираем по уровню игры</h3>
+        <p>Мы регулярно анализируем игру каждого ребёнка. Кто растёт быстрее, переходит в группу сильнее, кому нужно больше времени, получает индивидуальный подход. Каждый тренируется в своём ритме, без перегрузки и без замедления.</p>
+      </div>
+      <div class="card-l card-team rv">
+        <p class="eyebrow">Родителям</p>
+        <p class="equation">Игрок <i>+</i> Родитель <i>+</i> Тренер <i>=</i> <em>команда</em></p>
+        <p>Физическая, тактическая и ментальная подготовка требует поддержки семьи. Мы строим диалог с игроками и родителями, чтобы каждый ребёнок шёл к своей цели в комфортном темпе.</p>
+      </div>
+    </div>
+    <div class="school-cta rv">
+      <a class="btn btn-dark" href="#booking" data-kind="school">Записать ребёнка</a>
+      <p>Группы и расписание тренеры подбирают по возрасту и уровню подготовки ребёнка.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="coaches">
+  <div class="wrap">
+    <div class="head-row">
+      <div class="sec-head rv">
+        <p class="eyebrow">Тренерский состав</p>
+        <h2>14 тренеров</h2>
+        <p class="sec-lead">Теннис для детей и взрослых, тренажёрный зал. Самый большой стаж в команде — больше 30 лет.</p>
+      </div>
+      <div class="chips rv" role="group" aria-label="Показать тренеров">
+        <button class="chip" type="button" data-filter="all" aria-pressed="true">Все</button>
+        <button class="chip" type="button" data-filter="kids" aria-pressed="false">Детям</button>
+        <button class="chip" type="button" data-filter="adults" aria-pressed="false">Взрослым</button>
+        <button class="chip" type="button" data-filter="gym" aria-pressed="false">Тренажёрный зал</button>
+      </div>
+    </div>
+    <ul class="coach-grid" id="coachGrid">
+      <li class="coach rv" data-tags="kids"><figure><img src="assets/img/coach-andrey.webp" alt="Андрей Алексеевич Бессонов" loading="lazy" width="720" height="720"><span class="coach-exp">30+ лет<small>стаж</small></span></figure><h3>Бессонов<span>Андрей Алексеевич</span></h3><ul class="coach-do"><li>Дети от 7 лет: группы и индивидуально</li></ul><a class="coach-btn" href="#booking" data-kind="school" data-coach="Бессонов Андрей Алексеевич">Записаться <svg><use href="#i-arrow"/></svg></a></li>
+      <li class="coach rv" data-tags="kids adults"><figure><img src="assets/img/coach-tsibizova.webp" alt="Татьяна Юрьевна Цибизова" loading="lazy" width="720" height="720"><span class="coach-exp">25+ лет<small>стаж</small></span></figure><h3>Цибизова<span>Татьяна Юрьевна</span></h3><ul class="coach-do"><li>Дети от 5 лет: группы и индивидуально</li><li>Индивидуально для взрослых</li></ul><a class="coach-btn" href="#booking" data-kind="lesson" data-coach="Цибизова Татьяна Юрьевна">Записаться <svg><use href="#i-arrow"/></svg></a></li>
+      <li class="coach rv" data-tags="kids adults"><figure><img src="assets/img/coach-perfilov.webp" alt="Александр Игоревич Перфилов" loading="lazy" width="720" height="720"><span class="coach-exp">20+ лет<small>стаж</small></span></figure><h3>Перфилов<span>Александр Игоревич</span></h3><ul class="coach-do"><li>Индивидуально для детей от 9 лет</li><li>Индивидуально для любителей</li></ul><a class="coach-btn" href="#booking" data-kind="lesson" data-coach="Перфилов Александр Игоревич">Записаться <svg><use href="#i-arrow"/></svg></a></li>
+      <li class="coach rv" data-tags="kids adults"><figure><img src="assets/img/coach-alexey.webp" alt="Алексей Андреевич Бессонов" loading="lazy" width="720" height="720"><span class="coach-exp">15+ лет<small>стаж</small></span></figure><h3>Бессонов<span>Алексей Андреевич</span></h3><ul class="coach-do"><li>Дети от 9 лет: группы и индивидуально</li><li>Индивидуально для любителей</li></ul><a class="coach-btn" href="#booking" data-kind="lesson" data-coach="Бессонов Алексей Андреевич">Записаться <svg><use href="#i-arrow"/></svg></a></li>
+      <li class="coach rv" data-tags="kids adults"><figure><img src="assets/img/coach-ladik.webp" alt="Олег Геннадьевич Ладик" loading="lazy" width="720" height="720"><span class="coach-exp">15+ лет<small>стаж</small></span></figure><h3>Ладик<span>Олег Геннадьевич</span></h3><ul class="coach-do"><li>Дети от 5 лет: группы и индивидуально</li><li>Индивидуально для любителей</li></ul><a class="coach-btn" href="#booking" data-kind="lesson" data-coach="Ладик Олег Геннадьевич">Записаться <svg><use href="#i-arrow"/></svg></a></li>
+      <li class="coach rv" data-tags="kids adults"><figure><img src="assets/img/coach-sankov.webp" alt="Антон Вячеславович Саньков" loading="lazy" width="720" height="720"><span class="coach-exp">15+ лет<small>стаж</small></span></figure><h3>Саньков<span>Антон Вячеславович</span></h3><ul class="coach-do"><li>Дети от 5 лет: группы и индивидуально</li><li>Индивидуально для любителей</li></ul><a class="coach-btn" href="#booking" data-kind="lesson" data-coach="Саньков Антон Вячеславович">Записаться <svg><use href="#i-arrow"/></svg></a></li>
+      <li class="coach rv" data-tags="kids"><figure><img src="assets/img/coach-borisova.webp" alt="Анастасия Николаевна Борисова" loading="lazy" width="720" height="720"><span class="coach-exp">15+ лет<small>стаж</small></span></figure><h3>Борисова<span>Анастасия Николаевна</span></h3><ul class="coach-do"><li>Дети от 5 лет: группы и индивидуально</li></ul><a class="coach-btn" href="#booking" data-kind="school" data-coach="Борисова Анастасия Николаевна">Записаться <svg><use href="#i-arrow"/></svg></a></li>
+      <li class="coach rv" data-tags="adults"><figure><img src="assets/img/coach-maslov.webp" alt="Олег Игоревич Маслов" loading="lazy" width="720" height="720"><span class="coach-exp">14+ лет<small>стаж</small></span></figure><h3>Маслов<span>Олег Игоревич</span></h3><ul class="coach-do"><li>Индивидуально для любителей</li></ul><a class="coach-btn" href="#booking" data-kind="lesson" data-coach="Маслов Олег Игоревич">Записаться <svg><use href="#i-arrow"/></svg></a></li>
+      <li class="coach rv" data-tags="kids adults"><figure><img src="assets/img/coach-nikolay.webp" alt="Николай Андреевич Бессонов" loading="lazy" width="720" height="720"><span class="coach-exp">14+ лет<small>стаж</small></span></figure><h3>Бессонов<span>Николай Андреевич</span></h3><ul class="coach-do"><li>Дети: группы и индивидуально</li><li>Любители: группы и индивидуально</li></ul><a class="coach-btn" href="#booking" data-kind="lesson" data-coach="Бессонов Николай Андреевич">Записаться <svg><use href="#i-arrow"/></svg></a></li>
+      <li class="coach rv" data-tags="tennis"><figure><img src="assets/img/coach-shkurchenko.webp" alt="Ульяна Шкурченко" loading="lazy" width="720" height="683"></figure><h3>Шкурченко<span>Ульяна</span></h3><ul class="coach-do"><li>Тренер по теннису</li></ul><a class="coach-btn" href="#booking" data-kind="lesson" data-coach="Шкурченко Ульяна">Записаться <svg><use href="#i-arrow"/></svg></a></li>
+      <li class="coach rv" data-tags="tennis"><figure><img src="assets/img/coach-arkhipov.webp" alt="Пётр Архипов" loading="lazy" width="720" height="686"></figure><h3>Архипов<span>Пётр</span></h3><ul class="coach-do"><li>Тренер по теннису</li></ul><a class="coach-btn" href="#booking" data-kind="lesson" data-coach="Архипов Пётр">Записаться <svg><use href="#i-arrow"/></svg></a></li>
+      <li class="coach rv" data-tags="tennis"><figure><img src="assets/img/coach-balyuk.webp" alt="Анжелика Балюк" loading="lazy" width="720" height="638"></figure><h3>Балюк<span>Анжелика</span></h3><ul class="coach-do"><li>Тренер по теннису</li></ul><a class="coach-btn" href="#booking" data-kind="lesson" data-coach="Балюк Анжелика">Записаться <svg><use href="#i-arrow"/></svg></a></li>
+      <li class="coach rv" data-tags="gym"><figure><img src="assets/img/coach-gordienko.webp" alt="Екатерина Гордиенко" loading="lazy" width="720" height="777"></figure><h3>Гордиенко<span>Екатерина</span></h3><ul class="coach-do"><li>Тренер тренажёрного зала</li></ul><a class="coach-btn" href="#booking" data-kind="gym" data-coach="Гордиенко Екатерина">Записаться <svg><use href="#i-arrow"/></svg></a></li>
+      <li class="coach rv" data-tags="gym"><figure><img src="assets/img/coach-fertik.webp" alt="Константин Фертик" loading="lazy" width="720" height="828"></figure><h3>Фертик<span>Константин</span></h3><ul class="coach-do"><li>Тренер тренажёрного зала</li></ul><a class="coach-btn" href="#booking" data-kind="gym" data-coach="Фертик Константин">Записаться <svg><use href="#i-arrow"/></svg></a></li>
+    </ul>
+  </div>
+</section>
+
+<section class="light sec" id="club">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <p class="eyebrow">Инфраструктура</p>
+      <h2>Клуб, куда хочется приезжать заранее</h2>
+      <p class="sec-lead">Парковка без лишних кругов, зелёная территория, аккуратные дорожки, свежий воздух и вид на Дон, который помогает настроиться на матч.</p>
+    </div>
+    <div class="club-grid">
+      <figure class="club-view" aria-hidden="true">
+        <img class="on" src="assets/img/parking.webp" alt="" data-k="0">
+        <img src="assets/img/reception.webp" alt="" data-k="1" loading="lazy">
+        <img src="assets/img/kids-room.webp" alt="" data-k="2" loading="lazy">
+        <img src="assets/img/shop.webp" alt="" data-k="3" loading="lazy">
+        <img src="assets/img/locker-vip.webp" alt="" data-k="4" loading="lazy">
+        <img src="assets/img/clay-courts.webp" alt="" data-k="5" loading="lazy">
+        <img src="assets/img/gym-a.webp" alt="" data-k="6" loading="lazy">
+        <img src="assets/img/cafe-a.webp" alt="" data-k="7" loading="lazy">
+        <figcaption id="clubCap">Бесплатная парковка</figcaption>
+      </figure>
+      <ul class="club-list" id="clubList">
+        <li class="club-item on" data-k="0"><h3><i></i>Бесплатная парковка</h3><p>Просторная парковка прямо у входа в клуб. Места хватает в любое время.</p><img src="assets/img/parking.webp" alt="Парковка у входа в клуб" loading="lazy"></li>
+        <li class="club-item" data-k="1"><h3><i></i>Ресепшен и лаунж-зона</h3><p>Администратор уточнит детали брони, подскажет время и расписание. Здесь можно подождать партнёра или ребёнка, посмотреть матч или полистать теннисные журналы.</p><img src="assets/img/reception.webp" alt="Ресепшен и лаунж-зона" loading="lazy"></li>
+        <li class="club-item" data-k="2"><h3><i></i>Детская комната</h3><p>Закрытая игровая зона с книгами и настольными играми, где ребёнок проведёт время, пока вы на корте.</p><img src="assets/img/kids-room.webp" alt="Детская комната" loading="lazy"></li>
+        <li class="club-item" data-k="3"><h3><i></i>Теннисный магазин</h3><p>Ракетки, струны, форма, намотки и мячи: базовый и профессиональный инвентарь. Струны можно перетянуть на месте.</p><img src="assets/img/shop.webp" alt="Теннисный магазин" loading="lazy"></li>
+        <li class="club-item" data-k="4"><h3><i></i>Раздевалки и сауна</h3><p>Стандартные и VIP: душ, туалет, шкафчики, зеркала, фены и свежие полотенца. В VIP-раздевалках есть сауна для восстановления.</p><img src="assets/img/locker-vip.webp" alt="VIP-раздевалка" loading="lazy"></li>
+        <li class="club-item" data-k="5"><h3><i></i>Корты</h3><p>Открытые и закрытые, хард и грунт. Часть грунтовых кортов смотрит на Дон, рядом зоны отдыха, откуда удобно наблюдать за игрой.</p><img src="assets/img/clay-courts.webp" alt="Грунтовые корты" loading="lazy"></li>
+        <li class="club-item" data-k="6"><h3><i></i>Тренажёрный зал</h3><p>Кардио, свободные веса и функциональные тренировки: разогрев перед матчем или полноценные регулярные занятия.</p><img src="assets/img/gym-a.webp" alt="Тренажёрный зал" loading="lazy"></li>
+        <li class="club-item" data-k="7"><h3><i></i>Tennispark Cafe</h3><p>На втором этаже рядом с кортами: обед после тренировки, кофе между занятиями, деловая встреча. С одной стороны вид на открытые корты и Дон, с другой на крытые.</p><img src="assets/img/cafe-a.webp" alt="Tennispark Cafe" loading="lazy"></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="gym sec" id="gym">
+  <div class="wrap">
+    <div class="gym-top">
+      <div class="sec-head rv">
+        <p class="eyebrow">Тренажёрный зал</p>
+        <h2>Сила, которая пригодится на корте</h2>
+        <p class="sec-lead">Полноценный зал для регулярных занятий: самостоятельно, с тренером или в группе. Взрослые и дети под присмотром тренера.</p>
+      </div>
+      <div class="gym-photo rv"><img src="assets/img/gym-hero.webp" alt="Тренажёрный зал Тенниспарка" loading="lazy"></div>
+    </div>
+    <div class="gym-cols">
+      <div class="gym-card rv"><h3>Зачем теннисисту зал</h3><ul><li>держать форму между тренировками на корте</li><li>укрепить корпус и опорные мышцы</li><li>развить выносливость и координацию</li><li>разогреться перед игрой и восстановиться после</li></ul></div>
+      <div class="gym-card rv"><h3>Что есть в зале</h3><ul><li>тренажёры для силовой и функциональной нагрузки</li><li>зона свободных весов</li><li>кардиооборудование</li><li>место для разминки и растяжки</li></ul></div>
+      <div class="gym-card rv"><h3>Форматы занятий</h3><div class="formats"><div><b>В группе</b><span>малые группы с тренером</span></div><div><b>С тренером</b><span>по предварительной записи</span></div><div><b>Самостоятельно</b><span>свободное посещение</span></div></div></div>
+    </div>
+    <div class="gym-strip rv">
+      <img src="assets/img/gym-1.webp" alt="Силовая рама и функциональная зона" loading="lazy">
+      <img src="assets/img/gym-2.webp" alt="Зал с искусственным газоном" loading="lazy">
+      <img src="assets/img/gym-3.webp" alt="Кардиозона у панорамных окон" loading="lazy">
+      <img src="assets/img/gym-4.webp" alt="Зона свободных весов" loading="lazy">
+    </div>
+    <div class="gym-coaches rv">
+      <span>Тренеры зала:</span>
+      <a href="#coaches" data-filter-link="gym"><img src="assets/img/coach-gordienko.webp" alt="" loading="lazy">Екатерина Гордиенко</a>
+      <a href="#coaches" data-filter-link="gym"><img src="assets/img/coach-fertik.webp" alt="" loading="lazy">Константин Фертик</a>
+      <a class="btn btn-felt btn-sm" href="#booking" data-kind="gym">Записаться в зал</a>
+    </div>
+  </div>
+</section>
+
+<section class="tour sec" id="tournaments">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <p class="eyebrow">Турниры</p>
+      <h2>Играем на счёт</h2>
+      <p class="sec-lead">В Тенниспарке регулярно проходят турниры для игроков разного уровня: можно проверить себя в соревновании и вырасти в мастерстве.</p>
+    </div>
+    <ul class="reasons rv">
+      <li><b>Соперники по уровню</b><span>участников подбираем по рейтингу и опыту</span></li>
+      <li><b>Регулярность</b><span>турниры идут на постоянной основе</span></li>
+      <li><b>Судейство</b><span>на турнирах работают квалифицированные судьи</span></li>
+      <li><b>Форматы</b><span>одиночные и парные: мужские, женские, детские и микст</span></li>
+    </ul>
+    <div class="board-wrap">
+      <div class="board rv">
+        <div class="board-hd"><b>Летний сезон 2026</b><span>8 турниров</span></div>
+        <div class="board-scroll">
+          <table>
+            <tbody>
+              <tr><td class="d">31.05–01.06</td><td class="n">Tennispark Masters Series<small>Мужской одиночный, категория Masters</small></td><td class="s"><span>Сыгран</span></td></tr>
+              <tr><td class="d">07–08.06</td><td class="n">Командный чемпионат городов<small>Командный турнир</small></td><td class="s"><span>Сыгран</span></td></tr>
+              <tr><td class="d">14–15.06</td><td class="n">Tennispark Tour Series<small>Мужской одиночный, категория Tour</small></td><td class="s"><span>Сыгран</span></td></tr>
+              <tr><td class="d">20–22.06</td><td class="n">South Star Cup<small>Большой турнир с множеством разрядов и категорий</small></td><td class="s"><span>Сыгран</span></td></tr>
+              <tr><td class="d">28–29.06</td><td class="n">Tennispark Masters Series<small>Мужской одиночный, категория Masters</small></td><td class="s"><span>Сыгран</span></td></tr>
+              <tr><td class="d">05–06.07</td><td class="n">2 Капитана<small>Мужской парный, открытый разряд</small></td><td class="s"><span>Сыгран</span></td></tr>
+              <tr><td class="d">19–20.07</td><td class="n">Tennispark Tour Series<small>Мужской одиночный, категория Tour</small></td><td class="s"><span>Сыгран</span></td></tr>
+              <tr><td class="d">26–27.07</td><td class="n">Tennispark Masters Series<small>Мужской одиночный, категория Masters</small></td><td class="s"><span>Сыгран</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="board-foot"><span>Расписание нового сезона уточняйте у администратора.</span><a class="btn btn-felt btn-sm" href="#booking" data-kind="tour">Узнать о турнирах</a></div>
+      </div>
+      <div class="tour-photos rv">
+        <img src="assets/img/tour-players.webp" alt="Участники турнира на грунтовом корте" loading="lazy">
+        <img src="assets/img/tour-trophy.webp" alt="Деревянные кубки Tennispark Open" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="book sec" id="booking">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <p class="eyebrow">Запись</p>
+      <h2>Забронировать корт или тренировку</h2>
+      <p class="sec-lead">Заполните поля, и заявка уйдёт администратору в WhatsApp. Он подтвердит время, подберёт тренера и программу.</p>
+    </div>
+    <div class="book-grid">
+      <form class="form rv" id="bookForm" novalidate>
+        <fieldset class="field">
+          <legend>Что нужно</legend>
+          <div class="seg">
+            <input type="radio" name="kind" id="k-court" value="court" checked><label for="k-court">Аренда корта</label>
+            <input type="radio" name="kind" id="k-lesson" value="lesson"><label for="k-lesson">Тренировка</label>
+            <input type="radio" name="kind" id="k-school" value="school"><label for="k-school">Детская школа</label>
+            <input type="radio" name="kind" id="k-gym" value="gym"><label for="k-gym">Тренажёрный зал</label>
+            <input type="radio" name="kind" id="k-tour" value="tour"><label for="k-tour">Турнир</label>
+          </div>
+        </fieldset>
+        <fieldset class="field" data-for="court">
+          <legend>Покрытие</legend>
+          <div class="seg">
+            <input type="radio" name="surface" id="s-clay" value="Грунт" checked><label for="s-clay">Грунт</label>
+            <input type="radio" name="surface" id="s-hard" value="Хард"><label for="s-hard">Хард</label>
+            <input type="radio" name="surface" id="s-any" value="Любое"><label for="s-any">Не важно</label>
+          </div>
+        </fieldset>
+        <fieldset class="field" data-for="lesson">
+          <legend>Формат</legend>
+          <div class="seg">
+            <input type="radio" name="format" id="f-ind" value="Индивидуально" checked><label for="f-ind">Индивидуально</label>
+            <input type="radio" name="format" id="f-grp" value="В группе"><label for="f-grp">В группе</label>
+          </div>
+        </fieldset>
+        <div class="row2" data-for="school">
+          <div class="field"><label class="lbl" for="age">Возраст ребёнка</label>
+            <select class="inp" id="age"><option>5 лет</option><option>6 лет</option><option selected>7 лет</option><option>8 лет</option><option>9 лет</option><option>10 лет</option><option>11 лет</option><option>12 лет</option><option>13 лет</option><option>14 лет</option><option>15 лет</option><option>16 лет</option><option>17 лет</option></select>
+          </div>
+          <div class="field"><label class="lbl" for="level">Опыт</label>
+            <select class="inp" id="level"><option>Ещё не играл</option><option>Занимался меньше года</option><option>Играет больше года</option><option>Выступает на турнирах</option></select>
+          </div>
+        </div>
+        <div class="field" data-for="lesson school gym">
+          <label class="lbl" for="coach">Тренер</label>
+          <select class="inp" id="coach"></select>
+        </div>
+        <div class="row2" data-for="court lesson school gym">
+          <div class="field"><label class="lbl" for="date">Дата</label><input class="inp" type="date" id="date"></div>
+          <div class="field"><label class="lbl" for="time">Время</label><select class="inp" id="time"></select></div>
+        </div>
+        <div class="row2">
+          <div class="field"><label class="lbl" for="name">Имя</label><input class="inp" type="text" id="name" autocomplete="name" placeholder="Как к вам обращаться"></div>
+          <div class="field"><label class="lbl" for="phone">Телефон</label><input class="inp" type="tel" id="phone" autocomplete="tel" inputmode="tel" placeholder="+7 900 000-00-00"></div>
+        </div>
+        <p class="form-err" id="formErr" role="alert"></p>
+      </form>
+
+      <aside class="ticket rv" aria-label="Ваша заявка">
+        <div class="ticket-top">
+          <div><b>Заявка</b><small>Tennispark · Ростов-на-Дону</small></div>
+          <img src="assets/logo.svg" alt="" width="48" height="48">
+        </div>
+        <div class="ticket-body">
+          <div><p class="ticket-kind" id="tKind">Аренда корта</p><p class="ticket-sub" id="tSub">Грунт</p></div>
+          <dl>
+            <dt>Когда</dt><dd id="tWhen">—</dd>
+            <dt>Имя</dt><dd id="tName">—</dd>
+            <dt>Телефон</dt><dd id="tPhone">—</dd>
+          </dl>
+        </div>
+        <div class="ticket-actions">
+          <a class="btn btn-dark" id="waBtn" href="https://wa.me/79282960730" target="_blank" rel="noopener"><svg><use href="#i-chat"/></svg>Отправить в WhatsApp</a>
+          <p class="ticket-note">или позвоните: <b>+7 928 296-07-30</b><br>ежедневно с 7:00 до 22:00</p>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="contacts sec" id="contacts">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <p class="eyebrow">Контакты</p>
+      <h2>Ждём на Левом берегу</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="rv">
+        <ul class="c-list">
+          <li class="c-item"><span class="c-ic"><svg><use href="#i-pin"/></svg></span><div><small>Адрес</small><b>Левобережная ул., 69</b><p>Ростов-на-Дону, 344019</p></div></li>
+          <li class="c-item"><span class="c-ic"><svg><use href="#i-phone"/></svg></span><div><small>Телефон и WhatsApp</small><b><a href="tel:+79282960730" style="text-decoration:none">+7 928 296-07-30</a></b></div></li>
+          <li class="c-item"><span class="c-ic"><svg><use href="#i-clock"/></svg></span><div><small>Часы работы</small><b>Ежедневно 7:00–22:00</b><p>Без выходных и перерывов</p></div></li>
+          <li class="c-item"><span class="c-ic"><svg><use href="#i-car"/></svg></span><div><small>Парковка</small><b>Бесплатная, у входа</b></div></li>
+        </ul>
+        <div class="c-actions">
+          <a class="btn btn-felt" href="https://yandex.ru/maps/?rtext=~%D0%A0%D0%BE%D1%81%D1%82%D0%BE%D0%B2-%D0%BD%D0%B0-%D0%94%D0%BE%D0%BD%D1%83%2C%20%D0%9B%D0%B5%D0%B2%D0%BE%D0%B1%D0%B5%D1%80%D0%B5%D0%B6%D0%BD%D0%B0%D1%8F%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%2C%2069&amp;rtt=auto" target="_blank" rel="noopener">Проложить маршрут</a>
+          <a class="btn btn-ghost" href="https://wa.me/79282960730" target="_blank" rel="noopener"><svg><use href="#i-chat"/></svg>Написать</a>
+        </div>
+      </div>
+      <div class="map rv">
+        <svg viewBox="0 0 600 440" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <rect width="600" height="440" fill="#1c4631"/>
+          <path d="M-20 60 C 120 30, 260 110, 380 70 S 560 20, 640 50 L 640 150 C 540 120, 430 170, 330 165 S 120 120, -20 160 Z" fill="#2f6c80"/>
+          <path d="M-20 300 L 640 250" stroke="#fffbdb" stroke-opacity=".28" stroke-width="10"/>
+          <path d="M220 470 L 300 160" stroke="#fffbdb" stroke-opacity=".18" stroke-width="6"/>
+          <g fill="#c4572b"><rect x="330" y="205" width="30" height="50" rx="3"/><rect x="366" y="205" width="30" height="50" rx="3"/><rect x="402" y="205" width="30" height="50" rx="3"/><rect x="438" y="205" width="30" height="50" rx="3"/></g>
+          <rect x="330" y="268" width="138" height="34" rx="4" fill="#3b6fa0"/>
+          <text x="40" y="110" fill="#d8eef3" font-family="Golos Text, sans-serif" font-size="15" font-weight="600" letter-spacing="3">Р. ДОН</text>
+          <text x="40" y="330" fill="#fffbdb" fill-opacity=".6" font-family="Golos Text, sans-serif" font-size="13" transform="rotate(-4 40 330)">Левобережная ул.</text>
+          <circle cx="400" cy="230" r="38" fill="#d6ea3f" fill-opacity=".18"/>
+          <path d="M400 236 s-16-14-16-26a16 16 0 1 1 32 0c0 12-16 26-16 26z" fill="#d6ea3f"/>
+          <circle cx="400" cy="210" r="6" fill="#0b2a1c"/>
+        </svg>
+        <iframe src="https://yandex.ru/map-widget/v1/?mode=search&amp;text=%D0%A2%D0%B5%D0%BD%D0%BD%D0%B8%D1%81%D0%BF%D0%B0%D1%80%D0%BA%2C%20%D0%A0%D0%BE%D1%81%D1%82%D0%BE%D0%B2-%D0%BD%D0%B0-%D0%94%D0%BE%D0%BD%D1%83%2C%20%D0%9B%D0%B5%D0%B2%D0%BE%D0%B1%D0%B5%D1%80%D0%B5%D0%B6%D0%BD%D0%B0%D1%8F%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%2C%2069&amp;z=15" title="Тенниспарк на Яндекс Картах" loading="lazy" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p class="foot-word" aria-hidden="true">Тенниспарк</p>
+    <div class="foot-grid">
+      <a class="brand" href="#top"><img src="assets/logo.svg" alt="" width="44" height="44"><span>Тенниспарк</span></a>
+      <nav class="foot-nav" aria-label="Разделы сайта">
+        <a href="#courts">Аренда кортов</a><a href="#school">Детская школа</a><a href="#coaches">Тренеры</a>
+        <a href="#club">Инфраструктура</a><a href="#gym">Тренажёрный зал</a><a href="#tournaments">Турниры</a>
+        <a href="#booking">Запись</a><a href="#contacts">Контакты</a>
+      </nav>
+      <div>
+        <p><a class="hdr-phone" href="tel:+79282960730">+7 928 296-07-30</a></p>
+        <small>Левобережная ул., 69, Ростов-на-Дону<br>© <span id="year">2026</span> Тенниспарк</small>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="mbar" id="mbar">
+  <a class="btn btn-felt" href="#booking" data-kind="court">Забронировать</a>
+  <a class="btn btn-ghost" href="https://wa.me/79282960730" target="_blank" rel="noopener" aria-label="Написать в WhatsApp"><svg><use href="#i-chat"/></svg></a>
+  <a class="btn btn-ghost" href="tel:+79282960730" aria-label="Позвонить"><svg><use href="#i-phone"/></svg></a>
+</div>
+
+<script>
+(function () {
+  document.documentElement.classList.add('js');
+  var $ = function (s, r) { return (r || document).querySelector(s); };
+  var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+  var clamp = function (x, a, b) { return Math.min(b, Math.max(a, x)); };
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var WA = '79282960730';
+
+  // ——— Шапка и мобильная панель ———
+  var hdr = $('#hdr'), hero = $('#top'), mbar = $('#mbar'), lastY = 0;
+  function onHeader() {
+    var y = scrollY, heroEnd = hero.offsetHeight - innerHeight * 0.5;
+    hdr.classList.toggle('is-solid', y > heroEnd);
+    hdr.classList.toggle('is-hidden', y > heroEnd + 200 && y > lastY + 4 && !document.body.classList.contains('menu-open'));
+    if (y < lastY - 4 || y <= heroEnd + 200) hdr.classList.remove('is-hidden');
+    mbar.classList.toggle('on', y > heroEnd && y < document.documentElement.scrollHeight - innerHeight * 1.6);
+    lastY = y;
+  }
+
+  // ——— Меню ———
+  var mnav = $('#mnav'), burger = $('.burger');
+  function menu(open) {
+    mnav.classList.toggle('is-open', open);
+    burger.setAttribute('aria-expanded', String(open));
+    document.body.classList.toggle('menu-open', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+    if (open) $('.mnav-close').focus();
+  }
+  burger.addEventListener('click', function () { menu(true); });
+  $('.mnav-close').addEventListener('click', function () { menu(false); });
+  $$('#mnav a').forEach(function (a) { a.addEventListener('click', function () { menu(false); }); });
+  addEventListener('keydown', function (e) { if (e.key === 'Escape' && mnav.classList.contains('is-open')) menu(false); });
+
+  // ——— Появление ———
+  var io = new IntersectionObserver(function (es) {
+    es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+  $$('.rv').forEach(function (el, i) {
+    var r = el.getBoundingClientRect();
+    if (r.top < innerHeight) el.classList.add('in'); else io.observe(el);
+  });
+  $$('.coach-grid .rv').forEach(function (el, i) { el.style.transitionDelay = (i % 4) * 70 + 'ms'; });
+
+  // ——— Манифест по словам ———
+  var man = $('[data-words]'), words = [];
+  if (man) {
+    man.innerHTML = man.textContent.trim().split(/\s+/).map(function (w) { return '<span class="w">' + w + '</span>'; }).join(' ');
+    words = $$('.w', man);
+  }
+  var badge = $('.badge');
+
+  // ——— Плавающее фото у направлений ———
+  var fl = $('.dir-float'), flImg = fl && $('img', fl), fx = 0, fy = 0, tx = 0, ty = 0, flOn = false;
+  if (fl && matchMedia('(hover: hover) and (min-width: 901px)').matches) {
+    $$('.dir').forEach(function (d) {
+      d.addEventListener('mouseenter', function () { flImg.src = $('.dir-thumb', d).src; fl.classList.add('on'); flOn = true; });
+      d.addEventListener('mouseleave', function () { fl.classList.remove('on'); flOn = false; });
+    });
+    addEventListener('mousemove', function (e) { tx = e.clientX + 170; ty = e.clientY; });
+    (function loop() {
+      fx += (tx - fx) * 0.14; fy += (ty - fy) * 0.14;
+      if (flOn || fl.classList.contains('on')) fl.style.transform = 'translate3d(' + (fx - 150) + 'px,' + (fy - 187) + 'px,0) scale(1)';
+      requestAnimationFrame(loop);
+    })();
+  }
+
+  // ——— Скролл-сцены: фильм, манифест, линия школы ———
+  var film = $('#film'), frame = $('.film-frame'), video = $('video', film), stages = $('#stages');
+  function progress(el, startK, endK) {
+    var r = el.getBoundingClientRect();
+    return clamp((innerHeight * startK - r.top) / (r.height + innerHeight * (startK - endK)), 0, 1);
+  }
+  function onScenes() {
+    if (film && !reduce) {
+      var r = film.getBoundingClientRect(), span = r.height - innerHeight;
+      var p = clamp(-r.top / span, 0, 1) * 1.6;
+      var k = clamp(p, 0, 1), e = 1 - Math.pow(1 - k, 3);
+      var narrow = innerWidth < 760;
+      frame.style.setProperty('--ci', ((1 - e) * (narrow ? 22 : 15)).toFixed(2) + '%');
+      frame.style.setProperty('--cx', ((1 - e) * (narrow ? 6 : 14)).toFixed(2) + '%');
+      frame.style.setProperty('--cr', ((1 - e) * 28).toFixed(1) + 'px');
+      frame.style.setProperty('--co', clamp((p - 0.7) / 0.4, 0, 1).toFixed(3));
+    }
+    if (words.length) {
+      var mp = progress(man, 0.9, 0.35), n = Math.round(mp * words.length * 1.05);
+      words.forEach(function (w, i) { w.classList.toggle('on', i < n); });
+      if (badge) badge.style.transform = 'rotate(' + (mp * 140 - 40).toFixed(1) + 'deg)';
+    }
+    if (stages) stages.style.setProperty('--prog', progress(stages, 0.55, 0.55).toFixed(4));
+  }
+  if (video) {
+    new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { var pr = video.play(); if (pr && pr.catch) pr.catch(function () {}); } else video.pause(); });
+    }).observe(video);
+  }
+
+  var ticking = false;
+  addEventListener('scroll', function () {
+    if (ticking) return; ticking = true;
+    requestAnimationFrame(function () { onHeader(); onScenes(); ticking = false; });
+  }, { passive: true });
+  addEventListener('resize', onScenes);
+  onHeader(); onScenes();
+
+  // ——— Фильтр тренеров ———
+  var chips = $$('.chip'), coaches = $$('.coach');
+  function filter(f) {
+    chips.forEach(function (c) { c.setAttribute('aria-pressed', String(c.dataset.filter === f)); });
+    coaches.forEach(function (c) {
+      var t = c.dataset.tags.split(' ');
+      c.hidden = !(f === 'all' || t.indexOf(f) > -1);
+      if (!c.hidden) c.classList.add('in');
+    });
+  }
+  chips.forEach(function (c) { c.addEventListener('click', function () { filter(c.dataset.filter); }); });
+  $$('[data-filter-link]').forEach(function (a) { a.addEventListener('click', function () { filter(a.dataset.filterLink); }); });
+
+  // ——— Инфраструктура: фото по активному пункту ———
+  var clubList = $('#clubList'), clubImgs = $$('.club-view img'), clubCap = $('#clubCap'), items = $$('.club-item');
+  function setClub(k) {
+    items.forEach(function (it) { it.classList.toggle('on', it.dataset.k === String(k)); });
+    clubImgs.forEach(function (im) { im.classList.toggle('on', im.dataset.k === String(k)); });
+    var cur = items.filter(function (it) { return it.dataset.k === String(k); })[0];
+    if (cur) clubCap.textContent = $('h3', cur).textContent;
+  }
+  items.forEach(function (it) { it.addEventListener('mouseenter', function () { clubList.classList.add('has-active'); setClub(it.dataset.k); }); });
+  var clubIO = new IntersectionObserver(function (es) {
+    es.forEach(function (e) { if (e.isIntersecting) setClub(e.target.dataset.k); });
+  }, { rootMargin: '-45% 0px -45% 0px' });
+  items.forEach(function (it) { clubIO.observe(it); });
+  new IntersectionObserver(function (es) { clubList.classList.toggle('has-active', es[0].isIntersecting); }, { rootMargin: '-30% 0px -30% 0px' }).observe(clubList);
+
+  // ——— Запись ———
+  var form = $('#bookForm');
+  var COACH = {
+    tennis: ['Бессонов Андрей Алексеевич', 'Цибизова Татьяна Юрьевна', 'Перфилов Александр Игоревич', 'Бессонов Алексей Андреевич', 'Ладик Олег Геннадьевич', 'Саньков Антон Вячеславович', 'Борисова Анастасия Николаевна', 'Маслов Олег Игоревич', 'Бессонов Николай Андреевич', 'Шкурченко Ульяна', 'Архипов Пётр', 'Балюк Анжелика'],
+    school: ['Бессонов Андрей Алексеевич', 'Цибизова Татьяна Юрьевна', 'Перфилов Александр Игоревич', 'Бессонов Алексей Андреевич', 'Ладик Олег Геннадьевич', 'Саньков Антон Вячеславович', 'Борисова Анастасия Николаевна', 'Бессонов Николай Андреевич'],
+    gym: ['Гордиенко Екатерина', 'Фертик Константин']
+  };
+  var KIND = { court: 'Аренда корта', lesson: 'Тренировка', school: 'Детская школа', gym: 'Тренажёрный зал', tour: 'Турниры' };
+  var coachSel = $('#coach'), timeSel = $('#time'), dateInp = $('#date');
+  for (var h = 7; h <= 21; h++) {
+    var o = document.createElement('option'); o.value = o.textContent = (h < 10 ? '0' : '') + h + ':00';
+    if (h === 18) o.selected = true; timeSel.appendChild(o);
+  }
+  var today = new Date(); var iso = function (d) { return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0'); };
+  dateInp.min = iso(today); dateInp.value = iso(today);
+  function kindVal() { return form.kind.value; }
+  function fillCoaches(kind, pick) {
+    var list = kind === 'gym' ? COACH.gym : kind === 'school' ? COACH.school : COACH.tennis;
+    coachSel.innerHTML = '<option value="">Любой тренер</option>' + list.map(function (n) { return '<option>' + n + '</option>'; }).join('');
+    if (pick && list.indexOf(pick) > -1) coachSel.value = pick;
+  }
+  function fmtDate(v) {
+    if (!v) return '';
+    var d = new Date(v + 'T12:00:00');
+    return d.toLocaleDateString('ru-RU', { weekday: 'short', day: 'numeric', month: 'long' });
+  }
+  function syncVisibility() {
+    var k = kindVal();
+    $$('[data-for]', form).forEach(function (el) { el.hidden = el.dataset.for.split(' ').indexOf(k) < 0; });
+  }
+  function compose() {
+    var k = kindVal(), sub = '', lines = [];
+    var coach = coachSel.value, when = fmtDate(dateInp.value) + (dateInp.value ? ', ' + timeSel.value : '');
+    if (k === 'court') { sub = form.surface.value === 'Любое' ? 'Любое покрытие' : form.surface.value; lines.push('Хочу забронировать корт, покрытие: ' + sub.toLowerCase() + '.'); }
+    if (k === 'lesson') { sub = form.format.value + (coach ? ' · ' + coach.split(' ').slice(0, 2).join(' ') : ''); lines.push('Хочу записаться на тренировку (' + form.format.value.toLowerCase() + ')' + (coach ? ', тренер: ' + coach : '') + '.'); }
+    if (k === 'school') { sub = 'Ребёнку ' + $('#age').value + ' · ' + $('#level').value.toLowerCase(); lines.push('Хочу записать ребёнка в детскую школу. Возраст: ' + $('#age').value + ', опыт: ' + $('#level').value.toLowerCase() + (coach ? ', тренер: ' + coach : '') + '.'); }
+    if (k === 'gym') { sub = coach ? 'С тренером · ' + coach : 'Свободное посещение или с тренером'; lines.push('Хочу записаться в тренажёрный зал' + (coach ? ', тренер: ' + coach : '') + '.'); }
+    if (k === 'tour') { sub = 'Ближайшие турниры и регистрация'; lines.push('Расскажите, пожалуйста, о ближайших турнирах и как зарегистрироваться.'); }
+    if (k !== 'tour' && dateInp.value) lines.push('Когда: ' + when + '.');
+    var name = $('#name').value.trim(), phone = $('#phone').value.trim();
+    if (name) lines.push('Имя: ' + name + '.');
+    if (phone) lines.push('Телефон: ' + phone + '.');
+    $('#tKind').textContent = KIND[k];
+    $('#tSub').textContent = sub;
+    $('#tWhen').textContent = k === 'tour' ? 'по расписанию' : (when || '—');
+    $('#tName').textContent = name || '—';
+    $('#tPhone').textContent = phone || '—';
+    $('#waBtn').href = 'https://wa.me/' + WA + '?text=' + encodeURIComponent('Здравствуйте! ' + lines.join(' '));
+  }
+  form.addEventListener('input', compose);
+  form.addEventListener('change', function (e) {
+    if (e.target.name === 'kind') { fillCoaches(kindVal(), coachSel.value); syncVisibility(); }
+    compose();
+  });
+  form.addEventListener('submit', function (e) { e.preventDefault(); });
+  $('#waBtn').addEventListener('click', function (e) {
+    var name = $('#name').value.trim(), phone = $('#phone').value.replace(/\D/g, '');
+    if (!name || phone.length < 10) {
+      e.preventDefault();
+      $('#formErr').textContent = !name ? 'Укажите имя, чтобы администратор знал, как к вам обращаться.' : 'Укажите телефон полностью, чтобы администратор мог перезвонить.';
+      (!name ? $('#name') : $('#phone')).focus();
+    } else $('#formErr').textContent = '';
+  });
+  $$('[data-kind]').forEach(function (a) {
+    a.addEventListener('click', function () {
+      var k = a.dataset.kind, r = $('#k-' + k);
+      if (!r) return;
+      r.checked = true;
+      fillCoaches(k, a.dataset.coach);
+      if (a.dataset.surface) { var s = $$('input[name=surface]', form).filter(function (i) { return i.value === a.dataset.surface; })[0]; if (s) s.checked = true; }
+      if (a.dataset.format) { var f = $$('input[name=format]', form).filter(function (i) { return i.value === a.dataset.format; })[0]; if (f) f.checked = true; }
+      syncVisibility(); compose();
+    });
+  });
+  fillCoaches('court'); syncVisibility(); compose();
+  $('#year').textContent = new Date().getFullYear();
+})();
+</script>
+<script type="module">
+  import { initHero } from './assets/hero.js';
+  initHero();
+</script>
+</body>
+</html>
